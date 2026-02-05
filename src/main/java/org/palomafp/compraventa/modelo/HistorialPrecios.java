@@ -6,6 +6,11 @@ public class HistorialPrecios {
     private Date fecha;
     private int precio;
 
+    public HistorialPrecios(Date fecha, int precio) {
+        this.fecha = fecha;
+        this.precio = precio;
+    }
+
     public HistorialPrecios() {
     }
 
@@ -23,5 +28,13 @@ public class HistorialPrecios {
 
     public void setPrecio(int precio) {
         this.precio = precio;
+    }
+
+    @Override
+    public String toString() {
+        return "HistorialPrecios{" +
+                "fecha=" + fecha +
+                ", precio=" + precio +
+                '}';
     }
 }

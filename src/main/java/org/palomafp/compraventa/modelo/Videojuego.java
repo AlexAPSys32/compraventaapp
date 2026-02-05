@@ -6,6 +6,13 @@ public class Videojuego extends Producto {
     private String creadores;
     private String plataforma;
 
+    public Videojuego(String genero, int calificacion, String creadores, String plataforma) {
+        this.genero = genero;
+        this.calificacion = calificacion;
+        this.creadores = creadores;
+        this.plataforma = plataforma;
+    }
+
     public Videojuego() {
         super();
     }
@@ -40,5 +47,15 @@ public class Videojuego extends Producto {
 
     public void setPlataforma(String plataforma) {
         this.plataforma = plataforma;
+    }
+
+    @Override
+    public String toString() {
+        return "Videojuego{" +
+                "genero='" + genero + '\'' +
+                ", calificacion=" + calificacion +
+                ", creadores='" + creadores + '\'' +
+                ", plataforma='" + plataforma + '\'' +
+                '}';
     }
 }

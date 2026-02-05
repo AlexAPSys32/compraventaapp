@@ -5,6 +5,12 @@ public class Merchandising extends Producto {
     private boolean requiereEnvioEspecial;
     private int idProducto;
 
+    public Merchandising(String categoria, boolean requiereEnvioEspecial, int idProducto) {
+        this.categoria = categoria;
+        this.requiereEnvioEspecial = requiereEnvioEspecial;
+        this.idProducto = idProducto;
+    }
+
     public Merchandising() {
         super();
     }
@@ -31,5 +37,14 @@ public class Merchandising extends Producto {
 
     public void setIdProducto(int idProducto) {
         this.idProducto = idProducto;
+    }
+
+    @Override
+    public String toString() {  
+        return "Merchandising{" +
+                "categoria='" + categoria + '\'' +
+                ", requiereEnvioEspecial=" + requiereEnvioEspecial +
+                ", idProducto=" + idProducto +
+                '}';
     }
 }

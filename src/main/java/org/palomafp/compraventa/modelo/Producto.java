@@ -8,6 +8,15 @@ public class Producto {
     private String nombre;
     private int idProducto;
 
+    public Producto(int precio, String estado, String descripcion, Tienda tienda, String nombre, int idProducto) {
+        this.precio = precio;
+        this.estado = estado;
+        this.descripcion = descripcion;
+        this.tienda = tienda;
+        this.nombre = nombre;
+        this.idProducto = idProducto;
+    }
+
     public Producto() {
     }
 
@@ -57,5 +66,17 @@ public class Producto {
 
     public void setIdProducto(int idProducto) {
         this.idProducto = idProducto;
+    }
+
+    @Override
+    public String toString() {
+        return "Producto{" +
+                "precio=" + precio +
+                ", estado='" + estado + '\'' +
+                ", descripcion='" + descripcion + '\'' +
+                ", tienda=" + tienda +
+                ", nombre='" + nombre + '\'' +
+                ", idProducto=" + idProducto +
+                '}';
     }
 }

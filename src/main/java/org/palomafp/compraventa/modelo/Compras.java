@@ -7,6 +7,13 @@ public class Compras {
     private int precio;
     private Tienda tienda;
 
+    public Compras(String producto, Date fecha, int precio, Tienda tienda) {
+        this.producto = producto;
+        this.fecha = fecha;
+        this.precio = precio;
+        this.tienda = tienda;
+    }
+
     public Compras() {
     }
 
@@ -40,5 +47,15 @@ public class Compras {
 
     public void setTienda(Tienda tienda) {
         this.tienda = tienda;
+    }
+
+    @Override
+    public String toString() {
+        return "Compras{" +
+                "producto='" + producto + '\'' +
+                ", fecha=" + fecha +
+                ", precio=" + precio +
+                ", tienda=" + tienda +
+                '}';
     }
 }

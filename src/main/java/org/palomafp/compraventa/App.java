@@ -9,7 +9,7 @@ public class App
     public static void main( String[] args )
     {
 
-        CompraventaDAO.mostrarInfo();
+        System.out.println(CompraventaDAO.mostrarInfo());
 
     }
 }

@@ -1,5 +1,7 @@
 package org.palomafp.compraventa.modelo;
 
+import java.util.List;
+
 public class Producto {
     private int precio;
     private String estado;
@@ -7,14 +9,16 @@ public class Producto {
     private Tienda tienda;
     private String nombre;
     private int idProducto;
+    private List<HistorialPrecios> historialPrecios;
 
-    public Producto(int precio, String estado, String descripcion, Tienda tienda, String nombre, int idProducto) {
+    public Producto(int precio, String estado, String descripcion, Tienda tienda, String nombre, int idProducto, List<HistorialPrecios> historialPrecios) {
         this.precio = precio;
         this.estado = estado;
         this.descripcion = descripcion;
         this.tienda = tienda;
         this.nombre = nombre;
         this.idProducto = idProducto;
+        this.historialPrecios = historialPrecios;
     }
 
     public Producto() {
@@ -68,6 +72,14 @@ public class Producto {
         this.idProducto = idProducto;
     }
 
+    public List<HistorialPrecios> getHistorialPrecios() {
+        return historialPrecios;
+    }
+
+    public void setHistorialPrecios(List<HistorialPrecios> historialPrecios) {
+        this.historialPrecios = historialPrecios;
+    }
+
     @Override
     public String toString() {
         return "Producto{" +
@@ -77,6 +89,7 @@ public class Producto {
                 ", tienda=" + tienda +
                 ", nombre='" + nombre + '\'' +
                 ", idProducto=" + idProducto +
+                ", historialPrecios=" + historialPrecios +
                 '}';
     }
 }

@@ -1,16 +1,20 @@
 package org.palomafp.compraventa.modelo;
 
+import java.util.List;
+
 public class Usuario {
     private String biblioteca;
     private String idUsuario;
     private String correo;
     private int cartera;
+    private List<Compra> compras;
 
-    public Usuario(String biblioteca, String idUsuario, String correo, int cartera) {
+    public Usuario(String biblioteca, String idUsuario, String correo, int cartera, List<Compra> compras) {
         this.biblioteca = biblioteca;
         this.idUsuario = idUsuario;
         this.correo = correo;
         this.cartera = cartera;
+        this.compras = compras;
     }
 
     public Usuario() {
@@ -48,6 +52,14 @@ public class Usuario {
         this.cartera = cartera;
     }
 
+    public List<Compra> getCompras() {
+        return compras;
+    }
+
+    public void setCompras(List<Compra> compras) {
+        this.compras = compras;
+    }
+
     @Override
     public String toString() {
         return "Usuario{" +
@@ -55,6 +67,7 @@ public class Usuario {
                 ", idUsuario='" + idUsuario + '\'' +
                 ", correo='" + correo + '\'' +
                 ", cartera=" + cartera +
+                ", compras=" + compras +
                 '}';
     }
 }

@@ -1,20 +1,20 @@
 package org.palomafp.compraventa.modelo;
 import java.util.Date;
 
-public class Compras {
+public class Compra {
     private String producto;
     private Date fecha;
     private int precio;
     private Tienda tienda;
 
-    public Compras(String producto, Date fecha, int precio, Tienda tienda) {
+    public Compra(String producto, Date fecha, int precio, Tienda tienda) {
         this.producto = producto;
         this.fecha = fecha;
         this.precio = precio;
         this.tienda = tienda;
     }
 
-    public Compras() {
+    public Compra() {
     }
 
     public String getProducto() {

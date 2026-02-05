@@ -5,8 +5,8 @@ Producto <|-- Videojuego
 Producto <|-- Merchandising
 Producto <-- HistorialPrecios
 Producto <-- Tienda
-Usuario --> Compras
-Compras --> Producto
+Usuario --> Compra
+Compra --> Producto
 
 class Producto {
     -int precio
@@ -51,14 +51,15 @@ class Usuario {
     -String idUsuario
     -String correo
     -int cartera
-
+    -List <Compra> compras
 }
 
-class Compras {
-    -String producto
+class Compra {
     -Date fecha
     -int precio
     -Tienda tienda
+    -Producto producto
+    -int unidades
 
 }
 

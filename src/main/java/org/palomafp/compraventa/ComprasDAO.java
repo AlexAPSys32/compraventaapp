@@ -42,5 +42,21 @@ public class ComprasDAO
         compras.add(compra2);
     }
 
+    public String[] mostrarCompras() {
+        String[] resultado = new String[compras.size()];
+        for (int i = 0; i < compras.size(); i++) {
+            Compra compra = compras.get(i);
+            resultado[i] = "Compra{" +
+                    "fecha=" + compra.getFecha() +
+                    ", precio=" + compra.getPrecio() +
+                    ", tienda=" + compra.getTienda().getNombre() +
+                    ", producto=" + compra.getProducto().getNombre() +
+                    ", cantidad=" + compra.getUnidades() +
+                    '}';
+        }
+        return resultado;
+    }
+
+    
     
 }

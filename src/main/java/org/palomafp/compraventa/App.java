@@ -18,7 +18,12 @@ public class App
             eleccion = sc.nextInt();
             switch (eleccion) {
                 case 1:
-                    System.out.println("Mostrando información de un videojuego");
+                    System.out.println("Mostrando información de compras");
+                    ComprasDAO comprasDAO = new ComprasDAO();
+                    String[] compras = comprasDAO.mostrarCompras();
+                    for (String compra : compras) {
+                        System.out.println(compra);
+                    }
                     break;
                 case 2:
                     System.out.println("Mostrando información del Historial de precios");

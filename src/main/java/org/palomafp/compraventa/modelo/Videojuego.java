@@ -1,12 +1,15 @@
 package org.palomafp.compraventa.modelo;
 
+import java.util.ArrayList;
+
 public class Videojuego extends Producto {
     private String genero;
     private int calificacion;
     private String creadores;
     private String plataforma;
 
-    public Videojuego(String genero, int calificacion, String creadores, String plataforma) {
+    public Videojuego(int precio, String estado, String descripcion, Tienda tienda, String nombre, int idProducto, ArrayList<HistorialPrecios> historialPrecios, String genero, int calificacion, String creadores, String plataforma) {
+        super(precio, estado, descripcion, tienda, nombre, idProducto, historialPrecios);
         this.genero = genero;
         this.calificacion = calificacion;
         this.creadores = creadores;

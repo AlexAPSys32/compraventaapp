@@ -1,6 +1,6 @@
 package org.palomafp.compraventa.modelo;
 
-import java.util.List;
+import java.util.ArrayList;
 
 public class Producto {
     private int precio;
@@ -9,9 +9,9 @@ public class Producto {
     private Tienda tienda;
     private String nombre;
     private int idProducto;
-    private List<HistorialPrecios> historialPrecios;
+    private ArrayList<HistorialPrecios> historialPrecios;
 
-    public Producto(int precio, String estado, String descripcion, Tienda tienda, String nombre, int idProducto, List<HistorialPrecios> historialPrecios) {
+    public Producto(int precio, String estado, String descripcion, Tienda tienda, String nombre, int idProducto, ArrayList<HistorialPrecios> historialPrecios) {
         this.precio = precio;
         this.estado = estado;
         this.descripcion = descripcion;
@@ -72,11 +72,11 @@ public class Producto {
         this.idProducto = idProducto;
     }
 
-    public List<HistorialPrecios> getHistorialPrecios() {
+    public ArrayList<HistorialPrecios> getHistorialPrecios() {
         return historialPrecios;
     }
 
-    public void setHistorialPrecios(List<HistorialPrecios> historialPrecios) {
+    public void setHistorialPrecios(ArrayList<HistorialPrecios> historialPrecios) {
         this.historialPrecios = historialPrecios;
     }
 

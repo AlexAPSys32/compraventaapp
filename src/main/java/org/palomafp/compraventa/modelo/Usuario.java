@@ -1,15 +1,15 @@
 package org.palomafp.compraventa.modelo;
 
-import java.util.List;
+import java.util.ArrayList;
 
 public class Usuario {
     private String biblioteca;
     private String idUsuario;
     private String correo;
     private int cartera;
-    private List<Compra> compras;
+    private ArrayList<Compra> compras;
 
-    public Usuario(String biblioteca, String idUsuario, String correo, int cartera, List<Compra> compras) {
+    public Usuario(String biblioteca, String idUsuario, String correo, int cartera, ArrayList<Compra> compras) {
         this.biblioteca = biblioteca;
         this.idUsuario = idUsuario;
         this.correo = correo;
@@ -52,11 +52,11 @@ public class Usuario {
         this.cartera = cartera;
     }
 
-    public List<Compra> getCompras() {
+    public ArrayList<Compra> getCompras() {
         return compras;
     }
 
-    public void setCompras(List<Compra> compras) {
+    public void setCompras(ArrayList<Compra> compras) {
         this.compras = compras;
     }
 

@@ -1,10 +1,13 @@
 package org.palomafp.compraventa.modelo;
 
+import java.util.ArrayList;
+
 public class Merchandising extends Producto {
     private String categoria;
     private boolean requiereEnvioEspecial;
 
-    public Merchandising(String categoria, boolean requiereEnvioEspecial) {
+    public Merchandising(int precio, String estado, String descripcion, Tienda tienda, String nombre, int idProducto, ArrayList<HistorialPrecios> historialPrecios, String categoria, boolean requiereEnvioEspecial) {
+        super(precio, estado, descripcion, tienda, nombre, idProducto, historialPrecios);
         this.categoria = categoria;
         this.requiereEnvioEspecial = requiereEnvioEspecial;
     }

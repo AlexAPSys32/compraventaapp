@@ -2,13 +2,15 @@ package org.palomafp.compraventa.modelo;
 import java.util.Date;
 
 public class Compra {
+    private int idCompra;
     private Date fecha;
     private int precio;
     private Tienda tienda;
     private Producto producto;
     private int unidades;
 
-    public Compra(Date fecha, int precio, Tienda tienda, Producto producto, int unidades) {
+    public Compra(int idCompra, Date fecha, int precio, Tienda tienda, Producto producto, int unidades) {
+        this.idCompra = idCompra;
         this.fecha = fecha;
         this.precio = precio;
         this.tienda = tienda;
@@ -17,6 +19,14 @@ public class Compra {
     }
 
     public Compra() {
+    }
+
+    public int getIdCompra() {
+        return idCompra;
+    }
+
+    public void setIdCompra(int idCompra) {
+        this.idCompra = idCompra;
     }
 
     public Producto getProducto() {
@@ -62,7 +72,8 @@ public class Compra {
     @Override
     public String toString() {
         return "Compra{" +
-                "fecha=" + fecha +
+                "idCompra=" + idCompra +
+                ", fecha=" + fecha +
                 ", precio=" + precio +
                 ", tienda=" + tienda +
                 ", producto=" + producto +

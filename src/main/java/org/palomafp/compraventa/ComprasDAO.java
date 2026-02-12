@@ -32,13 +32,13 @@ public class ComprasDAO
         // 1. Producto Videojuego
         Videojuego videojuego = new Videojuego(59, "Nuevo", "Un juego de acción futurista", tienda1, "Cyberpunk 2077", 1, historialP1, "Ciencia Ficción", 18, "CD Projekt Red", "PC/PS5/Xbox");
         //Crear compra y añadir a la lista
-        Compra compra1 = new Compra(new Date(), 59, tienda1, videojuego, 1);
+        Compra compra1 = new Compra(101, new Date(), 59, tienda1, videojuego, 1);
         compras.add(compra1);
 
         // 2. Producto Merchandising
         Merchandising merchandising = new Merchandising(19, "Nuevo", "Figura de acción de un personaje popular", tienda2, "Figura de acción de Spiderman", 2, new ArrayList<HistorialPrecios>(), "Figuras", false);
         //Crear compra y añadir a la lista
-        Compra compra2 = new Compra(new Date(), 19, tienda2, merchandising, 1);
+        Compra compra2 = new Compra(102, new Date(), 19, tienda2, merchandising, 1);
         compras.add(compra2);
     }
 
@@ -47,7 +47,8 @@ public class ComprasDAO
         for (int i = 0; i < compras.size(); i++) {
             Compra compra = compras.get(i);
             resultado[i] = "Compra{" +
-                    "fecha=" + compra.getFecha() +
+                    "idCompra=" + compra.getIdCompra() +
+                    ", fecha=" + compra.getFecha() +
                     ", precio=" + compra.getPrecio() +
                     ", tienda=" + compra.getTienda().getNombre() +
                     ", producto=" + compra.getProducto().getNombre() +
@@ -57,6 +58,26 @@ public class ComprasDAO
         return resultado;
     }
 
-    
+    public ArrayList<Compra> getByidCompra(int idCompra) {
+        ArrayList<Compra> resultado = new ArrayList<Compra>();
+        for (Compra compra : compras) {
+            if (compra.getIdCompra() == idCompra) {
+                resultado.add(compra);
+            }
+        }
+        return resultado;
+    }
+
+    public Arraylist<Compra> getRandomCompra() {
+        ArrayList<Compra> resultado = new ArrayList<Compra>();
+        if (!compras.isEmpty()) {
+            int randomIndex = (int) (Math.random() * compras.size());
+            resultado.add(compras.get(randomIndex));
+        }
+        return resultado;
+    }
+
+
+
     
 }

@@ -1,5 +1,6 @@
 package org.palomafp.compraventa;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -13,26 +14,25 @@ public class App
         Scanner sc = new Scanner(System.in);
         int eleccion = 0;
 
+        ComprasDAO objeto = new ComprasDAO();
+
         do {
             menu();
             eleccion = sc.nextInt();
             switch (eleccion) {
                 case 1:
-                    System.out.println("Mostrando información de compras");
-                    ComprasDAO comprasDAO = new ComprasDAO();
-                    String[] compras = comprasDAO.mostrarCompras();
-                    for (String compra : compras) {
-                        System.out.println(compra);
-                    }
+                    objeto.mostrarTodasLasCompras();
                     break;
                 case 2:
-                    System.out.println("Mostrando información del Historial de precios");
+                    System.out.print("Introduce el ID de la compra a buscar: ");
+                    int id = sc.nextInt();
+                    objeto.mostrarCompraPorId(id);
                     break;
                 case 3:
-                    System.out.println("Mostrando información de las tiendas");
+                    objeto.mostrarCompraAleatoria();
                     break;
                 case 4:
-                    System.out.println("Mostrando información de los Merchandising");
+                    objeto.mostrarMerchandising();
                     break;
                 case 5:
                     System.out.println("Saliendo del programa...");
@@ -47,9 +47,9 @@ public class App
 
     public static void menu() {
         System.out.println("\n===============================MENÚ===============================");
-        System.out.println("========> 1. Mostrar información de un videojuego            <===="); 
-        System.out.println("========> 2. Mostrar información del Historial de precios    <====");
-        System.out.println("========> 3. Mostrar información de las tiendas              <====");
+        System.out.println("========> 1. Mostrar todas las compras                      <===="); 
+        System.out.println("========> 2. Buscar compra por ID                           <====");
+        System.out.println("========> 3. Mostrar una compra aleatoria                   <====");
         System.out.println("========> 4. Mostrar información de los Merchandising        <====");
         System.out.println("========> 5. Salir                                           <====");
         System.out.println("==================================================================\n");        

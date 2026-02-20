@@ -8,8 +8,7 @@ import org.palomafp.compraventa.modelo.*;
  * Hello world!
  *
  */
-public class ComprasDAO 
-{
+public class ComprasDAO {
 
     private ArrayList <Compra> compras = null;
 
@@ -42,6 +41,24 @@ public class ComprasDAO
         compras.add(compra2);
     }
 
+    public void mostrarTodasLasCompras() {
+        System.out.println("\n=== TODAS LAS COMPRAS ===");
+        if (compras.isEmpty()) {
+            System.out.println("No hay compras registradas.");
+        } else {
+            for (Compra compra : compras) {
+                System.out.println("Compra{" +
+                        "idCompra=" + compra.getIdCompra() +
+                        ", fecha=" + compra.getFecha() +
+                        ", precio=" + compra.getPrecio() +
+                        ", tienda=" + compra.getTienda().getNombre() +
+                        ", producto=" + compra.getProducto().getNombre() +
+                        ", cantidad=" + compra.getUnidades() +
+                        '}');
+            }
+        }
+    }
+
     public String[] mostrarCompras() {
         String[] resultado = new String[compras.size()];
         for (int i = 0; i < compras.size(); i++) {
@@ -68,7 +85,7 @@ public class ComprasDAO
         return resultado;
     }
 
-    public Arraylist<Compra> getRandomCompra() {
+    public ArrayList<Compra> getRandomCompra() {
         ArrayList<Compra> resultado = new ArrayList<Compra>();
         if (!compras.isEmpty()) {
             int randomIndex = (int) (Math.random() * compras.size());
@@ -77,7 +94,64 @@ public class ComprasDAO
         return resultado;
     }
 
+    public void mostrarCompraPorId(int idCompra) {
+        ArrayList<Compra> resultado = getByidCompra(idCompra);
+        if (resultado.isEmpty()) {
+            System.out.println("No se encontró ninguna compra con ID: " + idCompra);
+        } else {
+            System.out.println("\n=== RESULTADO DE LA BÚSQUEDA ===");
+            for (Compra compra : resultado) {
+                System.out.println("Compra{" +
+                        "idCompra=" + compra.getIdCompra() +
+                        ", fecha=" + compra.getFecha() +
+                        ", precio=" + compra.getPrecio() +
+                        ", tienda=" + compra.getTienda().getNombre() +
+                        ", producto=" + compra.getProducto().getNombre() +
+                        ", cantidad=" + compra.getUnidades() +
+                        '}');
+            }
+        }
+    }
 
+    public void mostrarCompraAleatoria() {
+        System.out.println("\n=== COMPRA ALEATORIA ===");
+        ArrayList<Compra> resultado = getRandomCompra();
+        if (resultado.isEmpty()) {
+            System.out.println("No hay compras disponibles.");
+        } else {
+            for (Compra compra : resultado) {
+                System.out.println("Compra{" +
+                        "idCompra=" + compra.getIdCompra() +
+                        ", fecha=" + compra.getFecha() +
+                        ", precio=" + compra.getPrecio() +
+                        ", tienda=" + compra.getTienda().getNombre() +
+                        ", producto=" + compra.getProducto().getNombre() +
+                        ", cantidad=" + compra.getUnidades() +
+                        '}');
+            }
+        }
+    }
+
+    public void mostrarMerchandising() {
+        System.out.println("\n=== MERCHANDISING ===");
+        boolean encontrado = false;
+        for (Compra compra : compras) {
+            if (compra.getProducto() instanceof Merchandising) {
+                encontrado = true;
+                Merchandising merch = (Merchandising) compra.getProducto();
+                System.out.println("Merchandising{" +
+                        "nombre=" + merch.getNombre() +
+                        ", precio=" + merch.getPrecio() +
+                        ", categoria=" + merch.getCategoria() +
+                        ", descripción=" + merch.getDescripcion() +
+                        ", estado=" + merch.getEstado() +
+                        '}');
+            }
+        }
+        if (!encontrado) {
+            System.out.println("No hay productos Merchandising disponibles.");
+        }
+    }
 
     
 }

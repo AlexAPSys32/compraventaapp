@@ -1,6 +1,5 @@
 package org.palomafp.compraventa;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -42,6 +41,7 @@ public class App
             }
         } while (eleccion != 5);
 
+        sc.close();
 
     }
 

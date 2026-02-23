@@ -59,22 +59,6 @@ public class ComprasDAO {
         }
     }
 
-    public String[] mostrarCompras() {
-        String[] resultado = new String[compras.size()];
-        for (int i = 0; i < compras.size(); i++) {
-            Compra compra = compras.get(i);
-            resultado[i] = "Compra{" +
-                    "idCompra=" + compra.getIdCompra() +
-                    ", fecha=" + compra.getFecha() +
-                    ", precio=" + compra.getPrecio() +
-                    ", tienda=" + compra.getTienda().getNombre() +
-                    ", producto=" + compra.getProducto().getNombre() +
-                    ", cantidad=" + compra.getUnidades() +
-                    '}';
-        }
-        return resultado;
-    }
-
     public ArrayList<Compra> getByidCompra(int idCompra) {
         ArrayList<Compra> resultado = new ArrayList<Compra>();
         for (Compra compra : compras) {

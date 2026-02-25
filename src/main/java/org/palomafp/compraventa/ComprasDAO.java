@@ -4,10 +4,7 @@ import java.util.ArrayList;
 import java.util.Date;
 
 import org.palomafp.compraventa.modelo.*;
-/**
- * Hello world!
- *
- */
+
 public class ComprasDAO {
 
     private ArrayList <Compra> compras = null;
@@ -41,79 +38,25 @@ public class ComprasDAO {
         compras.add(compra2);
     }
 
-    public void mostrarTodasLasCompras() {
-        System.out.println("\n=== TODAS LAS COMPRAS ===");
-        if (compras.isEmpty()) {
-            System.out.println("No hay compras registradas.");
-        } else {
-            for (Compra compra : compras) {
-                System.out.println("Compra{" +
-                        "idCompra=" + compra.getIdCompra() +
-                        ", fecha=" + compra.getFecha() +
-                        ", precio=" + compra.getPrecio() +
-                        ", tienda=" + compra.getTienda().getNombre() +
-                        ", producto=" + compra.getProducto().getNombre() +
-                        ", cantidad=" + compra.getUnidades() +
-                        '}');
-            }
-        }
-    }
-
-    public ArrayList<Compra> getByidCompra(int idCompra) {
-        ArrayList<Compra> resultado = new ArrayList<Compra>();
+    public Compra getByidCompra(int idCompra) {
         for (Compra compra : compras) {
             if (compra.getIdCompra() == idCompra) {
-                resultado.add(compra);
+                return compra;
             }
         }
-        return resultado;
+        return null;
     }
 
-    public ArrayList<Compra> getRandomCompra() {
-        ArrayList<Compra> resultado = new ArrayList<Compra>();
+    public Compra getRandomCompra() {
         if (!compras.isEmpty()) {
             int randomIndex = (int) (Math.random() * compras.size());
-            resultado.add(compras.get(randomIndex));
+            return compras.get(randomIndex);
         }
-        return resultado;
+        return null;
     }
 
-    public void mostrarCompraPorId(int idCompra) {
-        ArrayList<Compra> resultado = getByidCompra(idCompra);
-        if (resultado.isEmpty()) {
-            System.out.println("No se encontró ninguna compra con ID: " + idCompra);
-        } else {
-            System.out.println("\n=== RESULTADO DE LA BÚSQUEDA ===");
-            for (Compra compra : resultado) {
-                System.out.println("Compra{" +
-                        "idCompra=" + compra.getIdCompra() +
-                        ", fecha=" + compra.getFecha() +
-                        ", precio=" + compra.getPrecio() +
-                        ", tienda=" + compra.getTienda().getNombre() +
-                        ", producto=" + compra.getProducto().getNombre() +
-                        ", cantidad=" + compra.getUnidades() +
-                        '}');
-            }
-        }
-    }
-
-    public void mostrarCompraAleatoria() {
-        System.out.println("\n=== COMPRA ALEATORIA ===");
-        ArrayList<Compra> resultado = getRandomCompra();
-        if (resultado.isEmpty()) {
-            System.out.println("No hay compras disponibles.");
-        } else {
-            for (Compra compra : resultado) {
-                System.out.println("Compra{" +
-                        "idCompra=" + compra.getIdCompra() +
-                        ", fecha=" + compra.getFecha() +
-                        ", precio=" + compra.getPrecio() +
-                        ", tienda=" + compra.getTienda().getNombre() +
-                        ", producto=" + compra.getProducto().getNombre() +
-                        ", cantidad=" + compra.getUnidades() +
-                        '}');
-            }
-        }
+    public ArrayList<Compra> getAllCompras() {
+        return compras;
     }
 
     public void mostrarMerchandising() {

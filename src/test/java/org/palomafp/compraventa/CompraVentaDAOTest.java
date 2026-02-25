@@ -1,23 +1,34 @@
 package org.palomafp.compraventa;
 
+import java.util.ArrayList;
+import java.util.Date;
 import org.junit.jupiter.api.Test;
+import org.palomafp.compraventa.modelo.Compra;
+import org.palomafp.compraventa.modelo.HistorialPrecios;
+import org.palomafp.compraventa.modelo.Tienda;
+import org.palomafp.compraventa.modelo.Videojuego;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 public class CompraVentaDAOTest {
 
 	@Test
-	public void testMostrarInfo_Nulo() {
-		String info = ComprasDAO.mostrarInfo();
-		assertNotNull(info, "mostrarInfo no debe ser nulo");
-		assertFalse(info.isBlank(), "mostrarInfo no debe ser una cadena vacía");
+	public void testGetAllCompras() {
+		ComprasDAO comprasDAO = new ComprasDAO();
+		ArrayList<Compra> compras = comprasDAO.getAllCompras();
+		assertEquals(2, compras.size());
 	}
 
 	@Test
-	public void testMostrarInfo() {
-		String info = ComprasDAO.mostrarInfo();
-		assertTrue(info.contains("Videojuego"), "Se esperaba que la salida contuviera 'Videojuego'");
-		assertTrue(info.contains("Usuario"), "Se esperaba que la salida contuviera 'Usuario'");
+	public void testGetAllComprasisNull() {
+		ComprasDAO comprasDAO = new ComprasDAO();
+		ArrayList<Compra> compras = comprasDAO.getAllCompras();
+		assertEquals(null, compras);
+	}
+
+	@Test
+	public void testGetRandomCompra() {
+		Compra compraRandom = getRandomCompra();
 	}
 
 	@Test

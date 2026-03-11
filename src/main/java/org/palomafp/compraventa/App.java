@@ -16,15 +16,15 @@ public class App
             eleccion = sc.nextInt();
             switch (eleccion) {
                 case 1:
-                    objeto.mostrarTodasLasCompras();
+                    System.out.println(objeto.getAllCompras());
                     break;
                 case 2:
                     System.out.print("Introduce el ID de la compra a buscar: ");
                     int id = sc.nextInt();
-                    objeto.mostrarCompraPorId(id);
+                    System.out.println(objeto.getByidCompra(id));
                     break;
                 case 3:
-                    objeto.mostrarCompraAleatoria();
+                    System.out.println(objeto.getRandomCompra());
                     break;
                 case 4:
                     objeto.mostrarMerchandising();

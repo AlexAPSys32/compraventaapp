@@ -78,6 +78,6 @@ public class Compra {
                 ", tienda=" + tienda +
                 ", producto=" + producto +
                 ", unidades=" + unidades +
-                '}';
+                '}' + "\n";
     }
 }

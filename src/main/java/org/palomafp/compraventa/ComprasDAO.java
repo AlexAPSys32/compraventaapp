@@ -7,7 +7,7 @@ import org.palomafp.compraventa.modelo.*;
 
 public class ComprasDAO {
 
-    private ArrayList <Compra> compras = null;
+    private ArrayList <Compra> compras;
 
     public ComprasDAO() {
         //Crear lista compras vacía
@@ -38,25 +38,25 @@ public class ComprasDAO {
         compras.add(compra2);
     }
 
-    public Compra getByidCompra(int idCompra) {
+    public String getByidCompra(int idCompra) {
         for (Compra compra : compras) {
             if (compra.getIdCompra() == idCompra) {
-                return compra;
+                return compra.toString();
             }
         }
         return null;
     }
 
-    public Compra getRandomCompra() {
+    public String getRandomCompra() {
         if (!compras.isEmpty()) {
             int randomIndex = (int) (Math.random() * compras.size());
-            return compras.get(randomIndex);
+            return compras.get(randomIndex).toString();
         }
         return null;
     }
 
-    public ArrayList<Compra> getAllCompras() {
-        return compras;
+    public String getAllCompras() {
+        return compras.toString();
     }
 
     public void mostrarMerchandising() {

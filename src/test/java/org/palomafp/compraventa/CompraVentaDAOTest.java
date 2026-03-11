@@ -12,33 +12,45 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class CompraVentaDAOTest {
 
-	@Test
-	public void testGetAllCompras() {
-		ComprasDAO comprasDAO = new ComprasDAO();
-		ArrayList<Compra> compras = comprasDAO.getAllCompras();
-		assertEquals(2, compras.size());
-	}
+	ComprasDAO comprasDAO = new ComprasDAO();
 
 	@Test
-	public void testGetAllComprasisNull() {
-		ComprasDAO comprasDAO = new ComprasDAO();
-		ArrayList<Compra> compras = comprasDAO.getAllCompras();
-		assertEquals(null, compras);
+	public void testGetAllCompras() {
+		boolean vacio = false;
+		if(comprasDAO.getAllCompras() == null || comprasDAO.getAllCompras().isEmpty() ||comprasDAO.getAllCompras().isBlank()) {
+			vacio = true;
+		}
+
+		assertFalse(vacio, "La lista no debe estar vacia");
 	}
 
 	@Test
 	public void testGetRandomCompra() {
-		Compra compraRandom = getRandomCompra();
+		String mostrar = comprasDAO.getRandomCompra();
+
+		assertNotNull(mostrar);
 	}
 
 	@Test
-	public void testMostrarInfo_contieneInformacionCorrecta() {
-		String info = ComprasDAO.mostrarInfo();
-		// Desde la creación en el DAO: genero=Acción, creadores=Naughty Dog, idUsuario=user123 y cartera=100
-		assertTrue(info.contains("Acción"), "Se esperaba que la salida contuviera el género 'Acción'");
-		assertTrue(info.contains("Naughty Dog"), "Se esperaba que la salida contuviera 'Naughty Dog'");
-		assertTrue(info.contains("user123"), "Se esperaba que la salida contuviera el id de usuario 'user123'");
-		assertTrue(info.contains("100"), "Se esperaba que la salida contuviera la cartera '100'");
+	public void testGetByidCompraTrue() {
+		String mostrar = comprasDAO.getByidCompra(101);
+		boolean mostrado = true;
+		if(mostrar == null) {
+			mostrado = false;
+		}
+
+		assertTrue(mostrado, "La compra se ha mostrado");
+	}
+
+		@Test
+	public void testGetByidCompraFalse() {
+		String mostrar = comprasDAO.getByidCompra(99);
+		boolean mostrado = true;
+		if(mostrar == null) {
+			mostrado = false;
+		}
+
+		assertFalse(mostrado, "La compra no se ha mostrado");
 	}
 
 }

@@ -4,6 +4,10 @@ import java.util.Scanner;
 
 public class App 
 {
+    /**
+     * Metodo main que muestra un menú para usar la clase ComprasDAO y sus métodos.
+     * @param args para usar system.in y system.out.
+     */
     public static void main( String[] args )
     {
         Scanner sc = new Scanner(System.in);

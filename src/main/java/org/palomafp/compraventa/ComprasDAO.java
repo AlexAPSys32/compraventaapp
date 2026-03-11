@@ -5,10 +5,16 @@ import java.util.Date;
 
 import org.palomafp.compraventa.modelo.*;
 
+/**
+ * Clase ComprasDAO para gestionar las compras relacionadas con la aplicación de compraventa diseñada. Se utilizán todas las clases del proyecto.
+ */
 public class ComprasDAO {
 
     private ArrayList <Compra> compras;
 
+    /**
+     * lol
+     */
     public ComprasDAO() {
         //Crear lista compras vacía
         this.compras = new ArrayList<Compra>();

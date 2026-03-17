@@ -284,6 +284,6 @@ Este proyecto está bajo la Licencia MIT. Ver el archivo `LICENSE` para más det
 
 ---
 
-**Desarrollado por**: [Tu Nombre]  
+**Desarrollado por**: Miguel Sanguña y Alejadnro Aranda
 **Versión**: 1.0.0  
 **Última actualización**: Marzo 2026

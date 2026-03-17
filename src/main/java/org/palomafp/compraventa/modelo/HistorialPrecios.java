@@ -1,7 +1,9 @@
 package org.palomafp.compraventa.modelo;
 
 import java.util.Date;
-
+/**
+ * Esta clase representa todos los precios que ha tenido un producto a lo largo de su historia.
+ */
 public class HistorialPrecios {
     private Date fecha;
     private int precio;

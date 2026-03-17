@@ -1,7 +1,9 @@
 package org.palomafp.compraventa.modelo;
 
 import java.util.ArrayList;
-
+/**
+ * Esta clase representa el el producto como tal que un usuario puede comprar. De esta clase heredan Videojuego y Merchandising, puesto que ambos son productos.
+ */
 public class Producto {
     private int precio;
     private String estado;

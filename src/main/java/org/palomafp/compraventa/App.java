@@ -45,6 +45,9 @@ public class App
 
     }
 
+    /**
+     * Sirve para mostrar las opciones del menu. Se pone fuera del main para mayor claridad del codigo.
+     */
     public static void menu() {
         System.out.println("\n===============================MENÚ===============================");
         System.out.println("========> 1. Mostrar todas las compras                      <===="); 

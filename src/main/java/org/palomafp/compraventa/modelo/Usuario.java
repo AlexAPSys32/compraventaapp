@@ -1,7 +1,9 @@
 package org.palomafp.compraventa.modelo;
 
 import java.util.ArrayList;
-
+/**
+ * Esta clase representa al usuario que esta usando la app.
+ */
 public class Usuario {
     private String biblioteca;
     private String idUsuario;

@@ -1,6 +1,8 @@
 package org.palomafp.compraventa.modelo;
 import java.util.Date;
-
+/**
+ * Esta clase representa la compra que realiza un usuario, indicando todos los detalles.
+ */
 public class Compra {
     private int idCompra;
     private Date fecha;

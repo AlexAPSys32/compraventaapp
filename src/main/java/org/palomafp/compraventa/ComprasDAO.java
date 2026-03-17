@@ -13,7 +13,7 @@ public class ComprasDAO {
     private ArrayList <Compra> compras;
 
     /**
-     * lol
+     * Sirve para añadir todas las compras que se han realizado
      */
     public ComprasDAO() {
         //Crear lista compras vacía
@@ -44,6 +44,11 @@ public class ComprasDAO {
         compras.add(compra2);
     }
 
+    /**
+     * Se obtine la compra que deseamos buscar por el id
+     * @param idCompra es el id que se quiere buscar
+     * @return Si existe la compra que buscamos, nos muestra sus detalles, si no, es null.
+     */
     public String getByidCompra(int idCompra) {
         for (Compra compra : compras) {
             if (compra.getIdCompra() == idCompra) {
@@ -53,6 +58,10 @@ public class ComprasDAO {
         return null;
     }
 
+    /**
+     * Se obtiene una compra al azar
+     * @return devuelve los detalles de esa compra
+     */
     public String getRandomCompra() {
         if (!compras.isEmpty()) {
             int randomIndex = (int) (Math.random() * compras.size());
@@ -61,10 +70,17 @@ public class ComprasDAO {
         return null;
     }
 
+    /**
+     * Devuelve los detalles de todas las compras realizadas
+     * @return Los detalles de cada compra
+     */
     public String getAllCompras() {
         return compras.toString();
     }
 
+    /**
+     * Muestra los datos del merchandising e indica si lo ha encontrado o no
+     */
     public void mostrarMerchandising() {
         System.out.println("\n=== MERCHANDISING ===");
         boolean encontrado = false;

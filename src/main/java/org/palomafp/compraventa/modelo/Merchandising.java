@@ -1,7 +1,9 @@
 package org.palomafp.compraventa.modelo;
 
 import java.util.ArrayList;
-
+/**
+ * Esta clase representa el objeto merchandising que hereda de producto. Tiene la funcion de mostrar todos los detalles del merchandising que adquiere el usuario.
+ */
 public class Merchandising extends Producto {
     private String categoria;
     private boolean requiereEnvioEspecial;

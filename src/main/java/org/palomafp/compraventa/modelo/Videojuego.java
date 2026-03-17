@@ -1,7 +1,9 @@
 package org.palomafp.compraventa.modelo;
 
 import java.util.ArrayList;
-
+/**
+ * Esta clase representa el objeto videojuego que hereda de producto. Tiene la funcion de mostrar todos los detalles del videojuego que adquiere el usuario.
+ */
 public class Videojuego extends Producto {
     private String genero;
     private int calificacion;

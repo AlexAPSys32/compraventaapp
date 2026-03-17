@@ -1,7 +1,9 @@
 package org.palomafp.compraventa.modelo;
 
 import java.util.Date;
-
+/**
+ * Esta clase representa la tienda donde se van a adquirir todos los productos.
+ */
 public class Tienda {
     private String ubicacion;
     private Date horario;

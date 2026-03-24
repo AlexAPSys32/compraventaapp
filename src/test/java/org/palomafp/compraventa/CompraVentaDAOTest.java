@@ -8,6 +8,8 @@ import static org.junit.jupiter.api.Assertions.*;
 /**
  * Clase de pruebas unitarias para la clase ComprasDAO.
  * Verifica el correcto funcionamiento de los métodos de acceso a datos de compras.
+ * @author Miguel
+ * @author Alejandro
  */
 public class CompraVentaDAOTest {
 

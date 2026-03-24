@@ -7,6 +7,8 @@ import org.junit.jupiter.api.Test;
 /**
  * Clase de pruebas unitarias para la clase App.
  * Contiene pruebas básicas para verificar el funcionamiento correcto de la aplicación.
+ * @author Miguel
+ * @author Alejandro
  */
 public class AppTest
 {

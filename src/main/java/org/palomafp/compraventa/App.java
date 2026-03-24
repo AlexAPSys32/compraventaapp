@@ -3,6 +3,11 @@ package org.palomafp.compraventa;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+/**
+ * Clase principal de la aplicación de compraventa.
+ * @author Miguel
+ * @author Alejandro
+ */
 public class App {
     /**
      * Metodo main que muestra un menú para usar la clase ComprasDAO y sus métodos.
